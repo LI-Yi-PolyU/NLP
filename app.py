@@ -806,7 +806,6 @@ def launch_app():
         gr.HTML("""
             <div class="sw-header">
                 <h1>StoryWeaver</h1>
-                <p>基于深度状态管理的动态叙事系统 | DeepSeek驱动生成 | 实时一致性校验</p>
             </div>
         """)
         
