@@ -1,0 +1,43 @@
+world:
+  setting: "medieval_fantasy"
+  locations:
+    - id: "village"
+      name: "青石村"
+      danger_level: 0
+      connections: ["forest", "cave"]
+    - id: "forest"
+      name: "迷雾森林"
+      danger_level: 2
+      connections: ["village", "cave"]
+    - id: "cave"
+      name: "禁忌洞穴"
+      danger_level: 3
+      connections: ["village", "forest"]
+
+  characters:
+    - id: "elder"
+      name: "老村长"
+      location: "village"
+      status: "alive"
+      friendly_to_player: 50
+    - id: "hunter"
+      name: "猎人阿洛"
+      location: "forest"
+      status: "alive"
+      friendly_to_player: 35
+
+  items:
+    - id: "sword"
+      name: "锈剑"
+      location: "cave"
+      holder: null
+    - id: "torch"
+      name: "火把"
+      location: "village"
+      holder: null
+
+rules:
+  hard_constraints:
+    - "dead_character_cannot_speak"
+    - "item_not_held_cannot_be_used"
+    - "location_not_connected_cannot_travel"

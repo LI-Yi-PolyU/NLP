@@ -1,0 +1,16 @@
+rules:
+  dead_character_cannot_speak:
+    description: "死亡角色不能说话"
+    conflict_example:
+      - "村长已死亡"
+      - "村长说话"
+  item_not_held_cannot_be_used:
+    description: "未持有的物品不能使用"
+    conflict_example:
+      - "玩家未持有火把"
+      - "玩家使用火把"
+  location_not_connected_cannot_travel:
+    description: "不可直接移动到不连通地点"
+    conflict_example:
+      - "玩家在村庄"
+      - "玩家瞬移到王城"

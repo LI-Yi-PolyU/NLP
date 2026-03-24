@@ -1,0 +1,80 @@
+{
+  "evaluation": {
+    "intent_recognition": {
+      "accuracy": 1.0,
+      "f1_macro": 1.0,
+      "per_class_f1": {
+        "EXPLORE": 1.0,
+        "NEGOTIATE": 1.0,
+        "ATTACK": 1.0,
+        "USE_ITEM": 1.0,
+        "ASK_INFO": 1.0,
+        "UNKNOWN": 1.0
+      },
+      "error_examples": []
+    },
+    "consistency_detection": {
+      "accuracy": 1.0,
+      "f1_macro": 1.0,
+      "per_class_f1": {
+        "CONSISTENT": 1.0,
+        "CONFLICT": 1.0
+      },
+      "error_examples": []
+    },
+    "generation_latency": {
+      "mode": "end_to_end_game_engine",
+      "rounds": 12,
+      "total_seconds": 0.1041,
+      "avg_ms": 8.68
+    },
+    "branch_diversity": {
+      "sample_count": 5,
+      "avg_pairwise_similarity": 0.0,
+      "diversity_score": 1.0
+    }
+  },
+  "trace_stats": {
+    "trace_total": 172,
+    "mode_distribution": {
+      "SCRIPTED": 7,
+      "LIVE": 165
+    },
+    "ending_distribution": {
+      "victory": 7
+    },
+    "scripted_fallback_count": 2,
+    "non_cjk_narration_count": 11,
+    "consistency_blocked_count": 19
+  },
+  "evidence_cases": [
+    {
+      "type": "SCRIPTED_STABILITY",
+      "timestamp": "2026-03-23T05:21:58.045724Z",
+      "input": "我想去forest探索",
+      "narration": "[SCRIPTED] 你选择了：前往village。剧情稳定推进中。"
+    },
+    {
+      "type": "CONSISTENCY_AUTO_FIX",
+      "timestamp": "2026-03-23T08:38:20.759328Z",
+      "input": "拿起火把",
+      "note": "自动修正：检测到不可执行动作，已替换为安全叙事动作"
+    },
+    {
+      "type": "ENDING_TRIGGER",
+      "timestamp": "2026-03-23T09:14:49.314984Z",
+      "input": "我想去森林探索",
+      "ending_type": "victory",
+      "narration": "【结局：守望者归来】你让村庄看到了希望，新的旅程将从此展开。\n\n你带着关键线索与武器返回青石村，完成了主线目标。"
+    }
+  ],
+  "score_estimate": {
+    "appropriateness": 2.8,
+    "soundness": 2.8,
+    "excitement": 2.7,
+    "presentation": 2.8,
+    "writing": 2.7,
+    "total": 13.8,
+    "note": "该分数为答辩彩排估分，非最终评分。"
+  }
+}

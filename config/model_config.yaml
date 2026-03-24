@@ -1,0 +1,25 @@
+api:
+  openai_api_key: ""
+  base_url: "https://api.deepseek.com"
+  model_nlu_fallback: "deepseek-chat"
+  model_generation: "deepseek-chat"
+  temperature: 0.7
+  max_tokens: 512
+
+local:
+  # 本地中文模型配置（针对中文文本冒险优化）
+  # 中文 BERT（意图分类）
+  bert_model: "bert-base-chinese"        # 哈工大讯飞版，国内加载快
+
+  # 或者使用 macbert（效果更好，纠正了预训练差异）
+  # bert_model: "hfl/chinese-macbert-base"
+
+  # 中文 NLI 模型（语义一致性检查）
+  # 使用中文 BERT 微调的 NLI 模型，或通用多语言模型
+  nli_model: "uer/roberta-base-chinese_nli"  # 中文自然语言推理模型
+
+  # 备选：若上述模型下载困难，使用多语言 BART
+  # nli_model: "facebook/bart-large-mnli"  # 支持中文但效果略逊于专用中文模型
+
+  # 中文句向量模型（RAG 检索用）
+  embedding_model: "shibing624/text2vec-base-chinese"  # 中文语义相似度 SOTA 轻量模型

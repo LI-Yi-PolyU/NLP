@@ -1,0 +1,53 @@
+[
+  {
+    "id": "demo_path_safe",
+    "steps": [
+      {
+        "input": "前往village",
+        "expected_intent": "EXPLORE"
+      },
+      {
+        "input": "和elder谈谈",
+        "expected_intent": "NEGOTIATE"
+      },
+      {
+        "input": "问elder关于cave",
+        "expected_intent": "ASK_INFO"
+      }
+    ]
+  },
+  {
+    "id": "demo_path_risky",
+    "steps": [
+      {
+        "input": "前往cave",
+        "expected_intent": "EXPLORE"
+      },
+      {
+        "input": "使用torch",
+        "expected_intent": "USE_ITEM"
+      },
+      {
+        "input": "攻击hunter",
+        "expected_intent": "ATTACK"
+      }
+    ]
+  },
+  {
+    "id": "demo_path_tradeoff",
+    "steps": [
+      {
+        "input": "前往forest",
+        "expected_intent": "EXPLORE"
+      },
+      {
+        "input": "和hunter协商",
+        "expected_intent": "NEGOTIATE"
+      },
+      {
+        "input": "使用sword",
+        "expected_intent": "USE_ITEM"
+      }
+    ]
+  }
+]

@@ -1,0 +1,35 @@
+{
+  "intent_recognition": {
+    "accuracy": 1.0,
+    "f1_macro": 1.0,
+    "per_class_f1": {
+      "EXPLORE": 1.0,
+      "NEGOTIATE": 1.0,
+      "ATTACK": 1.0,
+      "USE_ITEM": 1.0,
+      "ASK_INFO": 1.0,
+      "UNKNOWN": 1.0
+    },
+    "error_examples": []
+  },
+  "consistency_detection": {
+    "accuracy": 1.0,
+    "f1_macro": 1.0,
+    "per_class_f1": {
+      "CONSISTENT": 1.0,
+      "CONFLICT": 1.0
+    },
+    "error_examples": []
+  },
+  "generation_latency": {
+    "mode": "end_to_end_game_engine",
+    "rounds": 12,
+    "total_seconds": 0.1041,
+    "avg_ms": 8.68
+  },
+  "branch_diversity": {
+    "sample_count": 5,
+    "avg_pairwise_similarity": 0.0,
+    "diversity_score": 1.0
+  }
+}

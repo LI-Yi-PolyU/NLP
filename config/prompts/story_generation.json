@@ -1,0 +1,47 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "StoryGenerationOutput",
+  "type": "object",
+  "required": ["narration", "state_changes", "next_options", "consistency_notes", "rag_sources"],
+  "properties": {
+    "narration": {"type": "string"},
+    "dialogue": {
+      "type": ["object", "null"],
+      "properties": {
+        "speaker": {"type": "string"},
+        "content": {"type": "string"},
+        "emotion": {"type": "string"}
+      },
+      "required": ["speaker", "content"]
+    },
+    "state_changes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["subject", "predicate", "object", "operation"],
+        "properties": {
+          "subject": {"type": "string"},
+          "predicate": {"type": "string"},
+          "object": {"type": "string"},
+          "operation": {"type": "string", "enum": ["set", "add", "remove"]}
+        }
+      }
+    },
+    "next_options": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id", "text", "intent_hint", "consequence_preview"],
+        "properties": {
+          "id": {"type": "string"},
+          "text": {"type": "string"},
+          "intent_hint": {"type": "string"},
+          "consequence_preview": {"type": "string"}
+        }
+      }
+    },
+    "consistency_notes": {"type": "array", "items": {"type": "string"}},
+    "rag_sources": {"type": "array", "items": {"type": "string"}}
+  }
+}
