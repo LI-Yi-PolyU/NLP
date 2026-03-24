@@ -1,0 +1,91 @@
+{
+  "summary": {
+    "rounds": 6,
+    "avg_latency_ms": 18062.27,
+    "max_latency_ms": 24186.46,
+    "min_latency_ms": 5432.1,
+    "final_game_over": true,
+    "final_ending_type": "victory"
+  },
+  "samples": [
+    {
+      "input": "查看周围环境",
+      "latency_ms": 20096.55,
+      "intent": "EXPLORE",
+      "intent_source": "api_fallback",
+      "consistency_passed": true,
+      "notes": [
+        "玩家在村庄，长老也在村庄且存活，友好度50；火把在村庄（可能由长老持有）；猎人在森林；锈剑在洞穴。所有选项符合位置连接规则（村庄连接森林和内部地点）。",
+        "主线阶段: 准备阶段：先获取基础探索能力"
+      ],
+      "ending_type": null,
+      "game_over": false
+    },
+    {
+      "input": "与老村长交谈",
+      "latency_ms": 21812.2,
+      "intent": "ASK_INFO",
+      "intent_source": "api_fallback",
+      "consistency_passed": true,
+      "notes": [
+        "玩家在村庄与老村长交谈，符合当前状态。老村长状态为alive，可以正常对话。对话内容基于世界设定，提供了火把和洞穴的线索，引导玩家完成'火把准备 -> 获取洞穴情报 -> 拿到锈剑 -> 返回村庄'的目标。友好度从55增加到60，反映对话的积极互动。",
+        "主线阶段: 准备阶段：先获取基础探索能力"
+      ],
+      "ending_type": null,
+      "game_over": false
+    },
+    {
+      "input": "拿起火把",
+      "latency_ms": 24186.46,
+      "intent": "USE_ITEM",
+      "intent_source": "api_fallback+guardrail_pickup",
+      "consistency_passed": true,
+      "notes": [
+        "动作合法：你已拿起目标物品并完成状态更新。",
+        "主线阶段: 调查阶段：整合情报并确定进洞路线"
+      ],
+      "ending_type": null,
+      "game_over": false
+    },
+    {
+      "input": "前往禁忌洞穴",
+      "latency_ms": 15129.48,
+      "intent": "EXPLORE",
+      "intent_source": "local_linear",
+      "consistency_passed": true,
+      "notes": [
+        "玩家已持有火把并位于洞穴，符合'火把准备'和'获取洞穴情报'阶段。锈剑在洞穴中，可被拿起。所有角色状态与位置保持一致，无违反硬约束规则。",
+        "主线阶段: 终盘阶段：洞穴取剑并撤离"
+      ],
+      "ending_type": null,
+      "game_over": false
+    },
+    {
+      "input": "拿起锈剑",
+      "latency_ms": 21716.82,
+      "intent": "USE_ITEM",
+      "intent_source": "api_fallback+guardrail_pickup",
+      "consistency_passed": true,
+      "notes": [
+        "动作合法：你已拿起目标物品并完成状态更新。",
+        "主线阶段: 终盘阶段：洞穴取剑并撤离"
+      ],
+      "ending_type": null,
+      "game_over": false
+    },
+    {
+      "input": "返回村庄",
+      "latency_ms": 5432.1,
+      "intent": "EXPLORE",
+      "intent_source": "api_fallback",
+      "consistency_passed": true,
+      "notes": [
+        "终局类型: victory",
+        "总回合: 6",
+        "游戏已结束，输入将不再推进剧情。"
+      ],
+      "ending_type": "victory",
+      "game_over": true
+    }
+  ]
+}

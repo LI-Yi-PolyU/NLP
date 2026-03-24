@@ -24,12 +24,12 @@
   "generation_latency": {
     "mode": "end_to_end_game_engine",
     "rounds": 12,
-    "total_seconds": 0.1041,
-    "avg_ms": 8.68
+    "total_seconds": 326.7967,
+    "avg_ms": 27233.06
   },
   "branch_diversity": {
-    "sample_count": 5,
-    "avg_pairwise_similarity": 0.0,
-    "diversity_score": 1.0
+    "sample_count": 10,
+    "avg_pairwise_similarity": 0.0648,
+    "diversity_score": 0.9352
   }
 }
