@@ -268,15 +268,16 @@ APP_CSS = """
     align-items: center;
     padding: 6px 12px;
     border-radius: 9999px;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 700;
+    line-height: 1.4;
     border: 1px solid transparent;
 }
 
 .sw-stage-prepare {
-    background: rgba(14, 165, 233, 0.18);
-    color: #7dd3fc;
-    border-color: rgba(14, 165, 233, 0.35);
+    background: #fde68a;
+    color: #1f2937;
+    border-color: #f59e0b;
 }
 
 .sw-stage-investigate {
